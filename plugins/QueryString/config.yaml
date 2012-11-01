@@ -1,0 +1,18 @@
+id  : QueryString
+key : querystring
+name: QueryString
+version: 1.2
+author_name: Alfasado Inc.
+author_link: http://alfasado.net/
+description: 'Output query string.'
+
+tags:
+    function:
+        QueryString: >
+            sub {
+                my $app = MT->instance;
+                if ( (ref $app) =~ /^MT::App::/ ) {
+                    return $app->query_string;
+                }
+                return '';
+            }
